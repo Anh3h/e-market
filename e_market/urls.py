@@ -24,5 +24,5 @@ urlpatterns = [
     path('signup/', core_views.signup, name='signup'),
     path('login/', auth_views.login, {'template_name': 'core/login.html'}, name='login'),
     path('logout/', auth_views.logout, {'next_page': 'login'}, name='logout'),
-    path('accounts/profile/', core_views.home, name="home"),
+    path('', core_views.home, name="home"),
 ]

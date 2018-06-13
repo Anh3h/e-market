@@ -2,21 +2,25 @@
 
 {% block content %}
     <div class="container">
-        <div class="card col-5 offset-3" style="margin-top: 7%">
+        <div class="card col-5 offset-4" style="margin-top: 5%">
             <div class="card-body">
               <h2 style="text-align: center">SIGN UP</h2>
               <form method="post">
-                {% csrf_token %}
-                <input type="hidden" class="form-control" name="next" value="{{ next }}" />
-                {% for field in form %}
+                  {% csrf_token %}
+                  <input type="hidden" class="form-control" name="next" value="{{ next }}" />
+                  {% for field in form %}
                   <p>
-                    {{ field.label_tag }}
-                    {{ field }}<br>
-                    {% for error in field.errors %}
-                      <p style="color: red">{{ error }}</p>
-                    {% endfor %}
+                     <div class="form-group">
+                        <label class="col-sm-5 col-form-label" for="{{ field.name }}">
+                            {{ field.label }}
+                        </label>
+                        {{ field }}<br>
+                        {% for error in field.errors %}
+                           <p style="color: red"><small>{{ error }}</small></p>
+                        {% endfor %}
+                     </div>
                   </p>
-                {% endfor %}
+                  {% endfor %}
                 <button type="submit" class="btn btn-primary float-right">Sign up</button>
               </form>
             <div class="card-body">
