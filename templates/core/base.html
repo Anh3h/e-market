@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>{% block title %}E-Market{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
         <header></header>
@@ -11,6 +12,21 @@
             {% block content %}
             {% endblock %}
         </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="col-4">
+                    <ul>
+                      <li>Cras justo odio</li>
+                      <li>Dapibus ac facilisis in</li>
+                      <li>Morbi leo risus</li>
+                      <li>Porta ac consectetur ac</li>
+                      <li>Vestibulum at eros</li>
+                    </ul>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4"></div>
+          </div>
+        </footer>
     </body>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
