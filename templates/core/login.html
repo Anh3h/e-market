@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="card col-4 offset-4" style="margin-top: 12%">
+            <div class="card-body">
+              <h2 style="text-align: center">LOG IN</h2>
+              {% if form.errors %}
+                <p style="color: red">Invalid username or password</p>
+              {% endif %}
+              <form method="post">
+                {% csrf_token %}
+                <input type="hidden" class="form-control" name="next" value="{{ next }}" />
+                {% for field in form %}
+                  <p>
+                    {{ field.label_tag }}
+                    {{ field }}<br>
+                    {% for error in field.errors %}
+                      <p style="color: red">{{ error }}</p>
+                    {% endfor %}
+                  </p>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary float-right">Log in</button>
+              </form>
+            <div class="card-body">
+        </div>
+    </div>
+{% endblock %}

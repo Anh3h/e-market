@@ -1,2 +1,5 @@
 ### Pycharm IDEA ###
 .idea/
+venv/
+__*
+e_market/__pycache__/settings.cpython-35.pyc
