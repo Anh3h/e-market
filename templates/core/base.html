@@ -12,21 +12,65 @@
             {% block content %}
             {% endblock %}
         </main>
-        <footer class="footer">
+        <!-- Footer -->
+        <section id="footer">
             <div class="container">
-                <div class="col-4">
-                    <ul>
-                      <li>Cras justo odio</li>
-                      <li>Dapibus ac facilisis in</li>
-                      <li>Morbi leo risus</li>
-                      <li>Porta ac consectetur ac</li>
-                      <li>Vestibulum at eros</li>
-                    </ul>
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick actions</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="http://localhost:8000/login"><i class="fa fa-angle-double-right"></i>Login</a></li>
+                            <li><a href="http://localhost:8000/signup"><i class="fa fa-angle-double-right"></i>Sign Up</a></li>
+                            <li><a href="http://localhost:8000/login"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="http://localhost:8000"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                            <li><a href="http://localhost:8000/logout"><i class="fa fa-angle-double-right"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>News</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Buyer view</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Support</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Terms of use</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Categories</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Beverages</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Fruits</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Vegetables</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Tubers</a></li>
+                            <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Animal produce</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-          </div>
-        </footer>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                    </hr>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        <p>Agro-emarket, Inc. Buea</p>
+                        <p class="h6">
+                            <script>document.write(new Date().getFullYear())</script> &copy All right Reversed.<a class="text-green ml-2" href="https://www.tigrodrige.wordpress.com" target="_blank">AgroE</a>
+                        </p>
+                    </div>
+                    </hr>
+                </div>
+            </div>
+        </section>
+        <!-- ./Footer -->
     </body>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
