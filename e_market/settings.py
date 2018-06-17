@@ -25,6 +25,8 @@ SECRET_KEY = '=%!l-3l1v2m!_%!v$+1(^^=4457-7emher%-c9$fjkm!!6dif)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL = 'home'
+
 ALLOWED_HOSTS = []
 
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'purchase.apps.PurchaseConfig',
+    'custom_profile.apps.CustomProfileConfig'
 ]
 
 MIDDLEWARE = [

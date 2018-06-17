@@ -38,15 +38,21 @@
           <input class="form-control " type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <a role="button" href="{% url 'login' %}" class="btn btn-outline-warning">Login</a>
-        <a role="button" href="{% url 'signup' %}" class="btn btn-warning">Register</a>
+          {% if not user.is_anonymous %}
+              <a role="button" href="{% url 'online_market:profile' %}" class="btn btn-outline-warning">Profile</a>
+              <a role="button" href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
+          {% else %}
+              <a role="button" href="{% url 'login' %}" class="btn btn-outline-warning">Login</a>
+              <a role="button" href="{% url 'signup' %}" class="btn btn-warning">Register</a>
+          {% endif %}
+
       </div>
     </nav>
 
         <!-- Carousel -->
     <div id="carouselExampleFade" class="carousel carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image: url('{% static 'image/slide4.jpg' %}');">
+        <div class="carousel-item active" style="background-image: url('{% static 'image/slide1.jpg' %}');">
         </div>
         <div class="carousel-item" style="background-image: url('{% static 'image/slide2.jpg' %}');">
         </div>
