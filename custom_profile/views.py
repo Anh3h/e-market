@@ -11,7 +11,7 @@ def profile(request):
         request.user.profile.location = request.POST.get("location", "")
         request.user.save()
         return redirect('home')
-    return render(request, 'core/profile.html', {'user': request.user})
+    return render(request, 'core/auth/profile.html', {'user': request.user})
 
 
 @login_required
@@ -28,4 +28,4 @@ def password(request):
             error = "The password is too short, it should be at least 8 characters long"
         else:
             error = "The two password fields didn't match."
-    return render(request, 'core/password.html', {'error': error})
+    return render(request, 'core/auth/password.html', {'error': error})

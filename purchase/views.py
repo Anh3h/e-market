@@ -18,4 +18,4 @@ def signup(request):
             return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, 'core/signup.html', {'form': form})
+    return render(request, 'core/auth/signup.html', {'form': form})
