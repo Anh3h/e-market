@@ -26,4 +26,5 @@ urlpatterns = [
     path('logout/', auth_views.logout, {'next_page': 'home'}, name='logout'),
     path('', core_views.home, name="home"),
     path('profile/', include('custom_profile.urls')),
+    path('products/', include('product.urls')),
 ]

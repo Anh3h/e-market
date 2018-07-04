@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #007b5e; padding: 1%">
+    <a class="navbar-brand nav-link" href="#"><strong>AgroE Market</strong></a>
+    <div class="collapse navbar-collapse" style="margin-left: 30px">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Vegetables</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tubers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Beverages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Fruits</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Others
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Fruits</a>
+                  <a class="dropdown-item" href="#">Tubers</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Animal produce</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline offset-2" style="padding-right: 20px">
+          <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        {% if not user.is_anonymous %}
+            <a role="button" href="{% url 'profile:profile' %}" class="btn btn-outline-warning">Profile</a>
+            <a role="button" href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
+        {% else %}
+            <a role="button" href="{% url 'login' %}" class="btn btn-outline-warning">Login</a>
+            <a role="button" href="{% url 'signup' %}" class="btn btn-warning">Register</a>
+        {% endif %}
+    </div>
+</nav>

@@ -3,51 +3,7 @@
 
 {% block content %}
         <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #007b5e; padding: 1%">
-      <a class="navbar-brand nav-link" href="#"><strong>AgroE Market</strong></a>
-      <div class="collapse navbar-collapse" style="margin-left: 30px">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}" >Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vegetables</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tubers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Beverages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Fruits</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Others
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Fruits</a>
-              <a class="dropdown-item" href="#">Tubers</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Animal produce</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline offset-2" style="padding-right: 20px">
-          <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-          {% if not user.is_anonymous %}
-              <a role="button" href="{% url 'online_market:profile' %}" class="btn btn-outline-warning">Profile</a>
-              <a role="button" href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
-          {% else %}
-              <a role="button" href="{% url 'login' %}" class="btn btn-outline-warning">Login</a>
-              <a role="button" href="{% url 'signup' %}" class="btn btn-warning">Register</a>
-          {% endif %}
-
-      </div>
-    </nav>
+    {% include 'core/shared/nav-bar.html' %}
 
         <!-- Carousel -->
     <div id="carouselExampleFade" class="carousel carousel-fade" data-ride="carousel">
@@ -73,42 +29,54 @@
     <div class="container grid">
         <div class="card-group">
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
         </div>
         <div class="card-group">
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
             <div class="card" style="width: 15rem; margin: 3%">
-              <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                <div class="card-body" style="padding: 5%">
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
+                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
+                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+                </div>
             </div>
         </div>
     </div>

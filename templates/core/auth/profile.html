@@ -6,7 +6,7 @@
         <div class="col-6 offset-4">
             <p>
                <h3>Edit Profile</h3>
-                <a role="button" href="{% url 'online_market:password' %}" class="btn float-right">Change Password</a>
+                <a role="button" href="{% url 'profile:password' %}" class="btn float-right">Change Password</a>
             </p>
             <form method="post" >
               {% csrf_token %}

@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% include 'core/shared/nav-bar.html' %}
+    <div class="container" style="margin: 2%">
+        <div class="row">
+            <div class="col-5 offset-2" style="padding-top: 2%">
+                <div class="card" style="width: 20rem; height: 20rem; margin: 3%">
+                    <img class="card-img" style="height: 20rem" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                </div>
+            </div>
+            <div class="col-4" style="padding-top: 7%">
+                <p><strong>Item: </strong>{{ product.name }}</p>
+                <p><strong>Price: </strong>5000 XAF/{{ product.measurement_id.name }}</p>
+                <p><strong>Description: </strong></p>
+                <a style="margin-top: 10%" href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Buy Now</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
