@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% include 'core/shared/nav-bar.html' %}
+    <div class="container" style="margin: 2%">
+        <div class="row">
+            <p class="offset-10" style="margin-top: 4%">
+                <a class="btn btn-warning" href="#" role="button">Create Product</a>
+            </p>
+            <div class="col-9 offset-2" style="margin-top: 4%">
+                <table class="table table-hover table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Created</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <th scope="row">{{ product.pk }}</th>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.price }}/{{ product.measurement_id.name }}</td>
+                                <td>{{ product.quantity }}</td>
+                                <td>{{ product.category_id.name }}</td>
+                                <td>{{ product.created }}</td>
+                                <td>
+                                    <a class="btn btn-outline-warning" role="button"
+                                       href="{% url 'product:viewProduct' product_id=product.pk %}">VIEW</a>
+                                    <a class="btn btn-outline-warning" role="button" href="{% url 'login' %}">DELETE</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

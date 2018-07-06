@@ -13,8 +13,13 @@
             <div class="col-4" style="padding-top: 7%">
                 <p><strong>Item: </strong>{{ product.name }}</p>
                 <p><strong>Price: </strong>5000 XAF/{{ product.measurement_id.name }}</p>
-                <p><strong>Description: </strong></p>
-                <a style="margin-top: 10%" href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Buy Now</a>
+                <p><strong>Quantity: </strong>{{ product.quantity }} {{ product.measurement_id.name }}(s)</p>
+                <p><strong>Description: </strong> {{ product.description }}</p>
+{#                {% if not user. %}#}
+{#                <a style="margin-top: 10%" href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Buy Now</a>#}
+                <a style="margin-top: 10%" href="{% url 'product:editProduct' product_id=1 %}" class="btn btn-warning float-right">Edit</a>
+{#                {% else %}#}
+{#                {% endif %}#}
             </div>
         </div>
     </div>

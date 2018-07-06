@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {% include 'core/shared/nav-bar.html' %}
+    <div class="container">
+        <div class="card col-8" style="margin-top: 5%; margin-left: 20%">
+            <div class="card-body">
+                <h2 style="text-align: center">Update Product</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name" value="{{ product.name }}" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control" name="quantity" placeholder="00"
+                                   value="{{ product.quantity }}" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="price">Price</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="price" placeholder="Price"
+                                       value="{{ product.price }}" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="pricePrepend">XAF</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="measurement_id">Measurement</label>
+                            <select id="measurement_id" name="measurement_id" class="form-control">
+                                {% for measurement in measurements %}
+                                    {% if measurement.pk == product.measurement_id.pk %}
+                                        <option value="{{ measurement }}" selected>{{ measurement.name }}</option>
+                                    {% else %}
+                                        <option value="{{ measurement }}">{{ measurement.name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="image">Select Image</label>
+                        <input type="file" class="custom-file-input" name="image" >
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                              <label for="category_id">Category</label>
+                              <select id="category_id" name="category_id" class="form-control">
+                                    {% for category in categories %}
+                                        {% if category.pk == product.category_id.pk %}
+                                            <option value="{{ category }}" selected>{{ category.name }}</option>
+                                        {% else %}
+                                            <option value="{{ category }}">{{ category.name }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                              </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="logistic_id">Logistics</label>
+                          <select name="logistic_id" class="form-control">
+                            {% for logistic in logistics %}
+                                {% if logistic.pk == product.logistic_id.pk %}
+                                    <option value="{{ logistic }}" selected>{{ logistic.name }}</option>
+                                {% else %}
+                                    <option value="{{ logistic }}">{{ logistic.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                          </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" name="description" rows="2">
+                            {{ product.description }}
+                        </textarea>
+                    </div>
+                    <button type="submit" style="float: right" class="btn btn-warning">UPDATE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
