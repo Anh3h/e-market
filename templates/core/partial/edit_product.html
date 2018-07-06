@@ -34,9 +34,9 @@
                             <select id="measurement_id" name="measurement_id" class="form-control">
                                 {% for measurement in measurements %}
                                     {% if measurement.pk == product.measurement_id.pk %}
-                                        <option value="{{ measurement }}" selected>{{ measurement.name }}</option>
+                                        <option value="{{ measurement.pk }}" selected>{{ measurement.name }}</option>
                                     {% else %}
-                                        <option value="{{ measurement }}">{{ measurement.name }}</option>
+                                        <option value="{{ measurement.pk }}">{{ measurement.name }}</option>
                                     {% endif %}
                                 {% endfor %}
                             </select>
@@ -52,9 +52,9 @@
                               <select id="category_id" name="category_id" class="form-control">
                                     {% for category in categories %}
                                         {% if category.pk == product.category_id.pk %}
-                                            <option value="{{ category }}" selected>{{ category.name }}</option>
+                                            <option value="{{ category.pk }}" selected>{{ category.name }}</option>
                                         {% else %}
-                                            <option value="{{ category }}">{{ category.name }}</option>
+                                            <option value="{{ category.pk }}">{{ category.name }}</option>
                                         {% endif %}
                                     {% endfor %}
                               </select>
@@ -64,9 +64,9 @@
                           <select name="logistic_id" class="form-control">
                             {% for logistic in logistics %}
                                 {% if logistic.pk == product.logistic_id.pk %}
-                                    <option value="{{ logistic }}" selected>{{ logistic.name }}</option>
+                                    <option value="{{ logistic.pk }}" selected>{{ logistic.name }}</option>
                                 {% else %}
-                                    <option value="{{ logistic }}">{{ logistic.name }}</option>
+                                    <option value="{{ logistic.pk }}">{{ logistic.name }}</option>
                                 {% endif %}
                             {% endfor %}
                           </select>
@@ -74,9 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea class="form-control" name="description" rows="2">
-                            {{ product.description }}
-                        </textarea>
+                        <textarea class="form-control" name="description" rows="2">{{ product.description }}</textarea>
                     </div>
                     <button type="submit" style="float: right" class="btn btn-warning">UPDATE</button>
                 </form>

@@ -26,12 +26,11 @@ def edit_product(request, product_id):
         product.name = request.POST.get("name", "")
         product.price = request.POST.get("price", "")
         product.quantity = request.POST.get("quantity", "")
-        product.measurement_id = Measurement(request.POST.get("measurement_id", ""))
-        product.category_id = Category(request.POST.get("category_id", ""))
-        product.logistic_id = Logistic(request.POST.get("logistic_id", ""))
+        product.measurement_id = Measurement.objects.get(pk=request.POST.get("measurement_id", ""))
+        product.category_id = Category.objects.get(pk=request.POST.get("logistic_id", ""))
+        product.logistic_id = Logistic.objects.get(pk=request.POST.get("logistic_id", ""))
         product.description = request.POST.get("description", "")
-        print(product.category_id.name)
-        # product.save()
+        product.save()
         return redirect('product:viewProduct', product_id)
     return render(request, 'core/partial/edit_product.html',
                   {'product': product,
