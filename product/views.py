@@ -13,7 +13,7 @@ def view_product(request, product_id):
 
 @login_required
 def view_my_products(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(user_id=request.user.id)
     return render(request, 'core/partial/myproducts.html', {'products': products})
 
 
@@ -63,3 +63,8 @@ def create_product(request):
                    'measurements': measurements,
                    'logistics': logistics,
                    'categories': categories})
+
+
+def delete_product(request, product_id):
+    Product.objects.get(pk=product_id).delete()
+    return redirect('product:viewMyProducts')

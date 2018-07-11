@@ -27,4 +27,5 @@ urlpatterns = [
     path('', core_views.home, name="home"),
     path('profile/', include('custom_profile.urls')),
     path('products/', include('product.urls')),
+    path('transactions/', include('purchase.urls')),
 ]

@@ -33,7 +33,8 @@
                                 <td>
                                     <a class="btn btn-outline-warning" role="button"
                                        href="{% url 'product:viewProduct' product_id=product.pk %}">VIEW</a>
-                                    <a class="btn btn-outline-warning" role="button" href="{% url 'login' %}">DELETE</a>
+                                    <a class="btn btn-outline-warning" role="button"
+                                       href="{% url 'product:deleteProduct' product_id=product.pk %}">DELETE</a>
                                 </td>
                             </tr>
                         {% endfor %}

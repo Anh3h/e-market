@@ -28,56 +28,16 @@
     <!-- grid -->
     <div class="container grid">
         <div class="card-group">
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
+            {% for product in products %}
+                <div class="card" style="width: 15rem; margin: 3%">
+                    <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
+                    <div class="card-body" style="padding: 5%">
+                        <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>{{ product.name }}</p>
+                        <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>{{ product.price }} XAF/{{ product.measurement_id.name }}</p>
+                        <a href="{% url 'product:viewProduct' product_id=product.pk %}" class="btn btn-warning float-right">Order</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
-                </div>
-            </div>
-        </div>
-        <div class="card-group">
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
-                </div>
-            </div>
-            <div class="card" style="width: 15rem; margin: 3%">
-                <img class="card-img-top" src="{% static "image/image1.jpg" %}" alt="Card image cap">
-                <div class="card-body" style="padding: 5%">
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Item: </strong>Cassava</p>
-                    <p style="padding: 0px; margin: 0px; font-size: 14px"><strong>Price: </strong>50.000 XAF/bucket</p>
-                    <a href="{% url 'product:viewProduct' product_id=1 %}" class="btn btn-warning float-right">Order</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

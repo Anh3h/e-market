@@ -19,7 +19,7 @@
                     <a style="margin-top: 10%" href="{% url 'product:editProduct' product_id=product.pk %}"
                        class="btn btn-warning float-right">Edit</a>
                 {% else %}
-                    <a style="margin-top: 10%" href="{% url 'product:viewProduct' product_id=product.pk %}"
+                    <a style="margin-top: 10%" href="{% url 'purchase:createTransaction' product_id=product.pk%}"
                        class="btn btn-warning float-right">Buy Now</a>
                 {% endif %}
             </div>
