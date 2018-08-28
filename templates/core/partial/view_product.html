@@ -14,6 +14,7 @@
                 <p><strong>Item: </strong>{{ product.name }}</p>
                 <p><strong>Price: </strong>{{ product.price }} XAF/{{ product.measurement_id.name }}</p>
                 <p><strong>Quantity: </strong>{{ product.quantity }} {{ product.measurement_id.name }}(s)</p>
+                <p><strong>Transportation: </strong> {{ product.logistic_id.method }}</p>
                 <p><strong>Description: </strong> {{ product.description }}</p>
                 {% if user.id == product.user_id.pk %}
                     <a style="margin-top: 10%" href="{% url 'product:editProduct' product_id=product.pk %}"

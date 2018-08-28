@@ -64,9 +64,9 @@
                           <select name="logistic_id" class="form-control">
                             {% for logistic in logistics %}
                                 {% if logistic.pk == product.logistic_id.pk %}
-                                    <option value="{{ logistic.pk }}" selected>{{ logistic.name }}</option>
+                                    <option value="{{ logistic.pk }}" selected>{{ logistic.method }}</option>
                                 {% else %}
-                                    <option value="{{ logistic.pk }}">{{ logistic.name }}</option>
+                                    <option value="{{ logistic.pk }}">{{ logistic.method }}</option>
                                 {% endif %}
                             {% endfor %}
                           </select>
